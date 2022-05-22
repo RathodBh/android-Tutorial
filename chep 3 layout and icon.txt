@@ -1,0 +1,107 @@
+# activity
+# image
+     You can put images in 
+     > Res
+     > Drawable
+
+--------------------------------------------
+
+# Layout
+   > Linear
+   > Constraint 
+
+# Linear layout
+    - Constraint layout > Linear layout 
+    - Drop 2 image in linear layout
+    - Select linear layout
+          > Gravity
+          > Center horizontal = true
+          > Center vertical = true
+    - Constraint horizontal and vertically
+    - You can give height width in dp like 200dp
+    - In xml file add the property
+    - <ImageView app:contentDescription="desc">
+    
+    + IF GENERATE ERROR OF HARD CODING
+    + Click on error icon and click "FIX" Button
+    + it generates (if not generate go to..)
+         > Res
+         > Values
+         > string.xml
+         > <string name="spd">spiderman</string>
+         
+     + Now you can give name like that in activity.xml
+         > <TextView android:text="@string/spd">
+
+--------------------------------------------
+
+# change laucher icon (app icon)
+
+     - search on google  > android launcher icon generator > generate icon and save name: ic_launcher
+     - extract zip and inside the Res folder all folders are there 
+     - copy all of them and paste into
+        > Go to your project folder
+        > App
+        > Src
+        > Main
+        > Res
+        > Paste all files and replace
+    - Go to your project folder
+        > Res
+        > Mipmap
+        > Ic_launcher
+        > Delete ic_launcher.xml file
+
+Step 2
+     - search on google  
+        > android launcher icon generator 
+        > generate icon and save name: ic_launcher_round
+     - extract zip and inside the Res folder all folders are there 
+     - copy all of them and paste into
+        > Go to your project folder
+        > App
+        > Src
+        > Main
+        > Res
+        > Paste all files and replace
+    - Go to your project folder
+        > Res
+        > Mipmap
+        > Ic_launcher
+        > Delete ic_launcher.xml file
+
+--------------------------------------------
+
+# word wrap
+  View > active editor > soft wrap
+  
+--------------------------------------------
+
+# scroll view
+ > Scroll view  
+ > linear layout(vertical)
+ > Add long text using TextView
+
+# Horizontal scroll view
+ > Horizontal Scroll view  
+ > linear layout(horizontal)
+ > Add images using ImageView
+ > In xml file copy and paste imageView and change id
+
+--------------------------------------------
+
+# logging (log.d and log.e)
+   - used for debugging
+   Log.d( "BH"," message"); //bh means filter name
+   
+  - used for debugging (error)
+   Log.e("filter","message");
+
+  - used for information
+   Log.i("filter","message");
+
+--------------------------------------------
+
+# baseline constraint
+  - used for alignment of controls
+  - used using textview1 point to textview2

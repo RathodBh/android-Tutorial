@@ -1,0 +1,144 @@
+# download ANDROID STUDIO SOFTWARE
+
+# android apps will create using
+1. XML(layout/skeleton) & JAVA (logic)
+2. XML & Kotlin
+
+-------------------------------------------
+
+# Some imp settings
+1. File settings 
+    > Appearance
+    > Themes
+    > Editor
+    > General
+    > Change font size CTRL + Mouse
+
+2. Apply theme(optional)
+    File settings
+    > Plugins
+    > Material Theme UI
+    > Now select theme Material Oceanic
+
+
+-------------------------------------------
+
+# XML FILE (Layout Editor)
+Palette
+    > Common
+    > Controls
+    > Select any control (drag and drop)
+
+-------------------------------------------
+
+# AVD : Android Virtual Device
+
+        VierGroup
+            > View
+            > ViewGroup
+                > View
+                > View
+            > View
+
+-------------------------------------------
+
+# Constraint Layout:
+    - Using spring
+
+-------------------------------------------
+
+# IMP NOTES
+    - Need Resources to be download
+    - Turn on virtualization in your PC
+    - Turn on access for Android Studio from FIREWALL
+
+# Select debugging in your phone also (optional)
+
+-------------------------------------------
+
+# R.JAVA
+    - All resources files
+    - Contains all fields IDs
+
+-------------------------------------------
+
+# In JAVA File
+
+    - You can import any library using ALT + ENTER
+
+## FIRST PROGRAM (button):
+
+    import android.widget.Button; (Example)
+
+    private Button button; (Explain: access_specifier Control_name ID_name)
+
+    Example 2:
+        import android.widget.TextView;
+        private TextView txt1;
+
+-------------------------------------------
+
+## GET VALUE IN THE CREATED VARIABLE
+
+    button = findViewById(R.id.button);
+
+    String t1 = findViewById(R.id.txt1);
+    txt1.setText(t1.toString());
+
+-------------------------------------------
+
+## SHOW OUTPUT TO THE USER USING TOAST
+
+ Toast.makeText(this, "Program is running...", Toast.LENGTH_SHORT).show();
+
+ -------------------------------------------
+
+# CHEPTER 2 : LEARN JAVA
+
+ -------------------------------------------
+
+ # Button click event 
+
+    Button button;
+    button = findViewById(R.id.button);
+    button.setOnClickListener(new View.OnClickListener(){
+        @override
+        public void onClick(View view){
+            //action
+        }
+    })
+
+ -------------------------------------------
+
+ ## EXAMPLE: 
+    two editText field for get user input and 
+    print sum in textField when button is clicked
+
+ANS:
+
+public class MainActivity extends AppCompatActivity{
+    TextView text;
+    EditText n1, n2;
+    Button button;
+
+    @override
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Toast.makeText(this, "Good morning", Toast.LENGTH_SHORT).show();
+        
+        text = findViewById(R.id.text);
+        n1 = findViewById(R.id.n1);
+        n2 = findViewById(R.id.n2);
+        button = findViewById(R.id.button);
+
+        button.setOnClickListener(View view.OnClickListener(){
+             @override
+            public void onClick(View view){
+                int sum = Integer.parseInt(n1.getText().toString()) + Integer.parseInt(n2.getText().toString());
+                text.setText("The sum is " + sum);
+            }
+        })
+    }
+}

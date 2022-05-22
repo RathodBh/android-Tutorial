@@ -1,0 +1,68 @@
+# activity = screen
+
+# Intent :
+    - whenever a new activity starts, privious activity is stopped but system preserve the activity in a stack.
+    - follows the LIFO(Last In First Out) logic
+    - we can pass message/info from one activity to another using intent.
+
+=> Types of intent
+     1. Implicit:
+          - Target components not known
+          - we have general action to perform
+     2. Explicit 
+          - Target of intent is known
+          - Fully classified classname of specific activity.
+
+--------------------------------------------
+
+## Multiscreen app creating..
+    1. Create a new app
+    2. Design the layout for first app
+    3. Create a button click listener
+    4. Create the second activity
+    5. Add proper links and metadata in manifest.xml
+    6. Add an Intent using this code:
+        Intent intent = new Intent(this, secondActivity.class);
+        startActivity(intent);
+
+# Example :
+ - create app With 1 textField and 1 button
+ - File > new > activity > empty activity > give name
+ - open manifest.xml
+ - Give code in mainActivity2 tag
+ - <activity android:name=".MainActivity2"
+                     android:lable="Task2"
+                     android:parentActivityName=".MainActivity" >
+                     
+   - open MainActivity.java
+   - type code
+       public void openActivity(View v){
+             Intent intent = new Intent(this, MainActivity2.class);
+             startActivity(intent);
+       }
+    - set onclick = openActivity in button property
+    
+
+--------------------------------------------
+
+## Pass data from MainActivity
+        - write code:  
+        - store name value in name variable like
+        - TextView name;
+           name = findViewById(R.id.name);
+           String nameText = name.getString().toString();
+        - public static final String EXTRA_NAME ="Unique id";
+        - intent.putExtra(EXTRA_NAME, nameText)
+
+--------------------------------------------
+
+## Get data in MainActivity2
+      - Create a TextView
+      - Write code
+      - TextView textView;
+         textView = findViewById(R.id.textView);
+         Intent intent = getIntent();
+        String name = intent.getStringExtra(MainActivity.EXTRA_NAME);
+         textView.setText(" Your name is : " + name);
+         
+--------------------------------------------
